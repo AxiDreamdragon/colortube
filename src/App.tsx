@@ -1,34 +1,47 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [colors, setColors] = useState<string[]>([
+    '#4821ae',
+    '#4abf81',
+    '#eee212',
+    '#ffae21',
+    '#20134a',
+    '#4821ae',
+    '#ffae21',
+    '#4abf81',
+    '#eee212',
+    '#4821ae',
+    '#20134a',
+    '#4abf81',
+    '#20134a',
+    '#eee212',
+    '#ffae21',
+    '#4821ae',
+    '#4abf81',
+    '#eee212',
+    '#20134a',
+    '#ff0000ff',
+  ]);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+      <nav>
+        <header>
+          <h1>ColorTube</h1>
+          <p className='subtext'><sub><i>Any color, any time.</i></sub></p>
+        </header>
+        <div className="links">
+          <a href="">Home</a>
+          <a href="">Search</a>
+          <a href="">Upload</a>
+        </div>
+      </nav>
+      <div className='color-container'>
+        {colors.map((color, i) =>
+          <div key={i} className='color' style={{ backgroundColor: color }}></div>)}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
