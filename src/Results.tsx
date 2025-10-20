@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import ColorSwatch from "./ColorSwatch";
 
-
 function Results() {
 	const [colors, setColors] = useState<[]>([]);
 

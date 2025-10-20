@@ -11,7 +11,6 @@ $pdo->exec("CREATE TABLE IF NOT EXISTS colors (
 	created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 )");
 
-$stmt = $pdo->query("SELECT * FROM colors ORDER BY created_at");
+$stmt = $pdo->query("SELECT * FROM colors ORDER BY created_at DESC");
 $colors = $stmt->fetchAll(PDO::FETCH_ASSOC);
-error_log("" . count($colors) . "");
 echo json_encode($colors);
