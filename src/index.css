@@ -3,7 +3,7 @@ html {
   margin: 0;
   background: hsl(227, 45%, 12%);
   color: white;
-  font-family: sans-serif;
+  font-family: "Comfortaa", sans-serif;
 }
 
 nav {
@@ -42,12 +42,28 @@ a:hover {
   border: 2px solid hsl(227, 46%, 50%);
 }
 
+.thumbnail {
+  border: none;
+  width: 100%;
+  aspect-ratio: 1;
+  transition: all .3s ease-out;
+}
+
+.thumbnail:hover {
+  border: none;
+  scale: 1.2;
+  z-index: 2;
+  transition: all .3s cubic-bezier(0.41, 0, 0.265, 1.55);
+}
+
 .color {
-  width: 10dvw;
-  height: 10dvw;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  box-sizing: border-box;
 }
 
 .color-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 10dvw);
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }

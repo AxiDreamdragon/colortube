@@ -1,44 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import ColorSwatch from "./ColorSwatch";
+
 
 function Results() {
-	const [colors, setColors] = useState<string[]>([
-		'#4821ae',
-		'#4abf81',
-		'#bdb52cff',
-		'#ffae21',
-		'#20134a',
-		'#4821ae',
-		'#9e690dff',
-		'#ff0000ff',
-		'#0f4428ff',
-		'#eee212',
-		'#563f95ff',
-		'#20134a',
-		'#ff0000ff',
-		'#4abf81',
-		'#8279a0ff',
-		'#eee212',
-		'#ffae21',
-		'#7d62c0ff',
-		'#4abf81',
-		'#eee212',
-		'#20134a',
-		'#ff0000ff',
-		'#8279a0ff',
-		'#ff0000ff',
-		'#0f4428ff',
-		'#eee212',
-		'#563f95ff',
-		'#20134a',
-		'#ff0000ff',
-		'#4abf81',
-	]);
+	const [colors, setColors] = useState<[]>([]);
+
+	const getColors = async () => {
+		const response = await fetch('/api/get-colors.php');
+		const json = await response.json();
+		setColors(json)
+	}
+
+	useEffect(() => {
+		getColors();
+	}, []);
 
 	//TODO: Search for colors via the parameters in the URL
 	return (
 		<div className='color-container'>
 			{colors.map((color, i) =>
-				<div key={i} className='color' style={{ backgroundColor: color }}></div>)}
+				<ColorSwatch key={i} color={color} />)}
 		</div>
 	);
 }
