@@ -1,4 +1,11 @@
 <?php
+
+$count = 100;
+
+if ($argc > 1) {
+	$count = (int) $argv[1];
+}
+
 $dbFile = __DIR__ . '/colortube.db';
 $pdo = new PDO("sqlite:$dbFile");
 
@@ -13,7 +20,7 @@ $pdo->exec("CREATE TABLE IF NOT EXISTS colors (
 
 $stmt = $pdo->prepare("INSERT INTO colors (color_string, red, green, blue, created_at) VALUES (?, ?, ?, ?, ?)");
 
-for ($i = 0; $i < 25; $i++) {
+for ($i = 0; $i < $count; $i++) {
 	$r = rand(0, 255);
 	$g = rand(0, 255);
 	$b = rand(0, 255);
