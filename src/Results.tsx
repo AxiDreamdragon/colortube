@@ -15,11 +15,11 @@ function Results() {
 					blue: blue,
 					count: "1000",
 				});
-				const response = await fetch(`/api/get-similar-colors.php?${params}`);
+				const response = await fetch(`/api/colortube/get-similar-colors.php?${params}`);
 				const json = await response.json();
 				setColors(json);
 			} else {
-				const response = await fetch('/api/get-colors.php');
+				const response = await fetch('/api/colortube/get-colors.php');
 				const json = await response.json();
 				setColors(json);
 			}

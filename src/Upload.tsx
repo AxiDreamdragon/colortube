@@ -22,7 +22,7 @@ function Upload() {
 			blue: b.toString(),
 		});
 
-		const response = await fetch(`/api/post-color.php?${params}`, { method: 'POST' });
+		const response = await fetch(`/api/colortube/post-color.php?${params}`, { method: 'POST' });
 		const json = await response.json();
 		const newId = json.id;
 

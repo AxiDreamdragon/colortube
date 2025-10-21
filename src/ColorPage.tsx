@@ -9,7 +9,7 @@ function ColorPage() {
 
 	useEffect(() => {
 		const getColors = async () => {
-			const response = await fetch(`/api/get-color.php?id=${colorId}`);
+			const response = await fetch(`/api/colortube/get-color.php?id=${colorId}`);
 			const json = await response.json();
 
 			if (json.error) {
@@ -27,7 +27,7 @@ function ColorPage() {
 				count: "10",
 			})
 
-			const simResponse = await fetch(`/api/get-similar-colors.php?${params}`);
+			const simResponse = await fetch(`/api/colortube/get-similar-colors.php?${params}`);
 			const simJson = await simResponse.json();
 			setSimilarColors(simJson);
 		}
