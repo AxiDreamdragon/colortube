@@ -33,12 +33,11 @@ function ColorPage() {
 		}
 
 		getColors();
-	}, []);
+	}, [colorId]);
 
 	if (!color.color_string) {
 		return <p>Couldn't find a color with ID #{colorId}</p>;
 	}
-
 
 	return (
 		<div className="color-page">
