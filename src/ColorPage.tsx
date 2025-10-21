@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ColorSwatch from "./ColorSwatch";
 
 function ColorPage() {
 	const { colorId } = useParams<{ colorId: string }>();
@@ -25,9 +24,15 @@ function ColorPage() {
 	return (<div className="color-page" style={{
 		backgroundColor: color.color_string,
 	}}>
-		<p>
-			ColorPage - Color ID is {colorId}
-		</p>
+		{color.color_string ?
+			<div className="color-information">
+				<p>Color #{colorId}</p>
+				<p>{color.color_string}</p>
+				<p><sub>Created at {color.created_at}</sub></p>
+			</div>
+			:
+			<p>Couldn't find a color with ID #{colorId}</p>
+		}
 	</div>);
 }
 
