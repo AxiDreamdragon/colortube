@@ -120,7 +120,8 @@ button:hover {
   transition: color 0.5s ease-in-out;
 }
 
-.search {
+.search,
+.upload {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -129,7 +130,8 @@ button:hover {
   gap: 1rem;
 }
 
-.color-search-label {
+.color-search-label,
+.color-upload-label {
   gap: .5rem;
   display: flex;
   flex-direction: column;

@@ -11,7 +11,6 @@ function Search() {
 	}
 
 	const onSearch = () => {
-		console.log('yo');
 		const { r, g, b } = parseHex(color);
 		window.location.href = `/search/${r}/${g}/${b}`;
 	}
