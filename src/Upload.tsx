@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // Pretty much the same as Search, tbh
 function Upload() {
 	const [color, setColor] = useState("#000000");
+	const navigate = useNavigate();
 
 	const parseHex = (hex: string) => {
 		const r = parseInt(hex.slice(1, 3), 16);
@@ -24,7 +26,7 @@ function Upload() {
 		const json = await response.json();
 		const newId = json.id;
 
-		window.location.href = `/color/${newId}`;
+		navigate(`/color/${newId}`);
 	}
 
 	return (<div className="upload">

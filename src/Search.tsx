@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Search() {
 	const [color, setColor] = useState("#000000");
+	const navigate = useNavigate();
 
 	const parseHex = (hex: string) => {
 		const r = parseInt(hex.slice(1, 3), 16);
@@ -12,7 +14,7 @@ function Search() {
 
 	const onSearch = () => {
 		const { r, g, b } = parseHex(color);
-		window.location.href = `/search/${r}/${g}/${b}`;
+		navigate(`/search/${r}/${g}/${b}`);
 	}
 
 	return (<div className="search">

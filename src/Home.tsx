@@ -6,7 +6,7 @@ import ColorPage from './ColorPage'
 
 function Home() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/colortube/'>
       <nav>
         <header>
           <h1>ColorTube</h1>
