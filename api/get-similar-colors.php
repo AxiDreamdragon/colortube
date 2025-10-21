@@ -3,10 +3,10 @@
 $red = $_GET["red"] ?? null;
 $green = $_GET["green"] ?? null;
 $blue = $_GET["blue"] ?? null;
-$color_string = $_GET["color_string"] ?? null;
+$color_string = $_GET["color_string"] ?? "";
 $count = $_GET["count"] ?? 10;
 
-if (!$red || !$green || !$blue || !$color_string) {
+if (!isset($red) || !isset($green) || !isset($blue)) {
 	http_response_code(400);
 	echo json_encode(["error" => "Missing parameters"]);
 	exit;

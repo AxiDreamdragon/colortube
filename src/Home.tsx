@@ -21,6 +21,7 @@ function Home() {
       <Routes>
         <Route path='/' element={<Results />} />
         <Route path='/search' element={<Search />} />
+        <Route path='/search/:red/:green/:blue' element={<Results />} />
         <Route path='/upload' element={<Upload />} />
         <Route path='/color/:colorId' element={<ColorPage />} />
       </Routes>

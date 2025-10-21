@@ -41,17 +41,22 @@ h1 {
   align-items: end;
 }
 
-a {
+a,
+button {
   color: white;
+  background: hsl(227, 45%, 12%);
+  font-family: "Comfortaa", sans-serif;
   text-decoration: none;
   font-weight: bold;
   border: 2px solid hsl(227, 46%, 25%);
   padding: .5rem 1rem;
   border-radius: 1rem;
   transition: all 0.2s ease-in-out;
+  font-size: 1rem;
 }
 
-a:hover {
+a:hover,
+button:hover {
   background-color: hsl(227, 46%, 25%);
   border: 2px solid hsl(227, 46%, 50%);
 }
@@ -113,6 +118,22 @@ a:hover {
   align-items: center;
   justify-content: center;
   transition: color 0.5s ease-in-out;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.color-search-label {
+  gap: .5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .color-information {

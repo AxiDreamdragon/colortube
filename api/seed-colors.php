@@ -13,7 +13,7 @@ $pdo->exec("CREATE TABLE IF NOT EXISTS colors (
 
 $stmt = $pdo->prepare("INSERT INTO colors (color_string, red, green, blue) VALUES (?, ?, ?, ?)");
 
-for ($i = 0; $i < 25; $i++) {
+for ($i = 0; $i < 2500; $i++) {
 	$r = rand(0, 255);
 	$g = rand(0, 255);
 	$b = rand(0, 255);
