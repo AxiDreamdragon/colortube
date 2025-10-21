@@ -11,14 +11,16 @@ $pdo->exec("CREATE TABLE IF NOT EXISTS colors (
 	created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 )");
 
-$stmt = $pdo->prepare("INSERT INTO colors (color_string, red, green, blue) VALUES (?, ?, ?, ?)");
+$stmt = $pdo->prepare("INSERT INTO colors (color_string, red, green, blue, created_at) VALUES (?, ?, ?, ?, ?)");
 
-for ($i = 0; $i < 2500; $i++) {
+for ($i = 0; $i < 25; $i++) {
 	$r = rand(0, 255);
 	$g = rand(0, 255);
 	$b = rand(0, 255);
 	$c = "rgb($r,$g,$b)";
+	$timestamp = time() - rand(0, 10800); // Random timestamp within last 3 hours
+	$createdAt = date("Y-m-d H:i:s", $timestamp);
 
-	$stmt->execute([$c, $r, $g, $b]);
+	$stmt->execute([$c, $r, $g, $b, $createdAt]);
 }
 
