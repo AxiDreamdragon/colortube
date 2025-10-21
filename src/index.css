@@ -64,7 +64,6 @@ button:hover {
 .thumbnail {
   border: none;
   width: 100%;
-  aspect-ratio: 1;
   transition: all .3s ease-out;
 }
 
@@ -100,9 +99,12 @@ button:hover {
 
 .color-container {
   display: grid;
-  flex: 1;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   overflow-y: auto;
+}
+
+.color-cell {
+  aspect-ratio: 1 / 1;
 }
 
 .color-page {
