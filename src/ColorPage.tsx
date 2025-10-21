@@ -50,9 +50,9 @@ function ColorPage() {
 					<p><sub>Created at {color.created_at}</sub></p>
 				</div>
 			</div>
-			<div className="color-suggestions">
+			<div className="color-suggestions-container">
 				<h2 style={{ marginTop: 0 }}>Similar colors</h2>
-				<div>
+				<div className="color-suggestions">
 					{similarColors.map((simColor, i) =>
 						<ColorSwatch key={i} color={simColor} />
 					)}

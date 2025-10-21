@@ -5,10 +5,17 @@ html {
   color: white;
   font-family: "Comfortaa", sans-serif;
   overflow-x: hidden;
+  overflow-y: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 #root {
-  min-height: 100dvh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
 }
@@ -73,23 +80,31 @@ a:hover {
   box-sizing: border-box;
 }
 
-.color-suggestions {
-  padding: 2rem;
+.color-suggestions-container {
+  padding: 2rem 4rem;
   border-left: .5rem solid hsl(227, 46%, 25%);
   max-height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
+}
+
+.color-suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .color-container {
   display: grid;
-  margin-bottom: 1rem;
+  flex: 1;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  overflow-y: auto;
 }
 
 .color-page {
   display: flex;
   width: 100%;
   flex: 1;
+  overflow: hidden;
 }
 
 .color-fill {
